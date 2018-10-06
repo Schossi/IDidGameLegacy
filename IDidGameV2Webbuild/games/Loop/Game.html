@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head>
+    <title>IDG LOOP</title>
+    <link rel="icon" type="image/png" href="Images/IDGFavicon.png">
+    <link href="../../Style/gameV1.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="div_debug" style="color:white;margin-left:80px;">        
+        <span id="x"></span>X
+        <span id="y"></span>Y
+        <span id="span_fps"></span>FPS
+        <span id="span_status"></span>
+    </div>
+        <div id="div_gameObject">
+            <canvas class="canvas" id="canvas_main" width="600" height="600"></canvas>
+            <canvas class="canvas" id="canvas_overlay" width="600" height="600"></canvas>
+        </div>
+
+    <div class="home">
+        <a href="../../index.html">
+            <img style="border:0" height="50" width="50" src="../../Images/IDGFaviconHome.png">
+        </a>
+    </div>
+
+    <script src="../../Scripts/Twitter.js"></script>
+
+    <div class="footer">
+        <label>Scale</label>
+        <select id="select_scale">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option selected="selected" value="4">4</option>
+            <option value="8">8</option>
+        </select>
+        <label>Fade</label>
+        <input size="3" type="text" id="input_fade" name="fade" value="15">
+        <button id="button_go">Go</button>
+    </div>
+
+    <div class="gtwitter">
+        <a href="https://twitter.com/intent/tweet?screen_name=IDidGame" class="twitter-mention-button" data-related="IDidGame">@IDidGame</a>
+    </div>
+
+    <script type="text/javascript">        
+        kongregate = undefined;
+    </script>
+    <script type="text/javascript" src="Scripts/RSTools.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Prototypes.js"></script>
+    <script src="Scripts/JSObjects/GameContext.js"></script>
+    <script src="Scripts/JSObjects/Sound.js"></script>
+    <script src="Scripts/JSObjects/Ship.js"></script>
+    <script src="Scripts/JSObjects/Enemies.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/UI.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Effects.js"></script>
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+
+    <script src="../../Scripts/UI.js"></script>
+
+</body></html>

@@ -1,0 +1,9 @@
+name: IDidGameV2
+version: 0.5.0
+author: IDG
+description: A sample Polymer application
+dependencies:
+  core_elements: any
+  polymer:  any
+transformers:
+- polymer

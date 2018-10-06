@@ -1,0 +1,48 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<polymer-element name="idg-header" attributes="title subtitle type">
+  <template>
+    <style>
+    header{
+    border-bottom: 3px solid #444444; 
+    background-color: #000000;
+    }
+    
+    .title{
+    color:#FFFFFF;
+    font-size:18pt;
+      text-align: center;
+    }    
+    .subtitle{
+    color:#FFFFFF;
+    font-size:10pt;
+      text-align: center;
+    }    
+    </style>    
+    
+    <header horizontal layout>
+    <img width="50px" height="50px"  id="icon" src="/images/IDGFaviconBig.png"/>      
+    <a id="home" href="../../index.html">
+        <img width="50px" height="50px"   src="/images/IDGFaviconHome.png" />
+    </a>
+      
+    <div flex vertical layout>
+      <div class="title" >{{title}}</div>   
+      <div class="subtitle" >{{subtitle}}</div>   
+    </div>
+     <div>     
+      <iframe
+        src="//platform.twitter.com/widgets/follow_button.html?screen_name=IDidGame"
+        style="width: 128px; height: 20px;"
+        allowtransparency="true"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+    <hr>
+    </header> 
+           
+  </template>
+  <script type="application/dart" src="idgheader.dart"></script>
+</polymer-element>

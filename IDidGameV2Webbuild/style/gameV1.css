@@ -1,0 +1,21 @@
+html *{
+   font-family: Arial !important;
+   background-color: black;            
+}
+
+body {
+  margin:0px;
+  padding:0px;
+}
+
+canvas {
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin: auto;
+  cursor: crosshair;
+  z-index:1000;
+}

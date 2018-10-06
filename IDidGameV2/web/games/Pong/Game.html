@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Pong Clone</title>
+    <link rel="icon"
+          type="image/png"
+          href="Images/IDGFavicon.png" />
+    <link href="../../style/gameV1.css" rel="stylesheet" />
+        
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    <link rel="import" href="../../elements/idgheader.html">
+    <link rel="import" href="../../elements/gamefooter.html">
+    
+</head>
+<body >
+     <idg-header title="Pong" subtitle="Try to catch your opponent off guard by changing the direction with up/down"></idg-header>
+     
+    <div style="color:white;display:none">
+        <button onclick="start_loop()">Start</button>
+        <span id="x"></span>X
+        <span id="y"></span>Y
+        <span id="BallSpeed"></span>BallSpeed
+    </div>
+        <div id="div_gameObject" >
+        <canvas id="canvas_background" class="canvas" width="800" height="600">Nix Gut!</canvas>
+        <canvas onmousemove="IDIDGAME_Pong.mouse(event)" onmousedown="    IDIDGAME_Pong.mouseDown(event)" id="canvas_main" class="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <game-footer></game-footer>
+
+    <script type="text/javascript" src="Main.js"></script>
+    
+    <!-- bootstrap polymer -->
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<polymer-element around-justified name="game-button" attributes="name icon description">
+  <template>
+    <style>   
+      
+      .headerDiv{
+        text-align: center;
+        font-size: 16pt;      
+      }
+      .descriptionDiv{
+        text-align: left;
+        font-size: 12pt;      
+      }
+      button {     
+        box-shadow:3px 3px 5px black inset;   
+        border:#FFFFFF;
+        border-radius:5px;
+        border-style:solid;
+        display:inline-block;
+        height:150px;
+        width:230px;
+        background-color:#565656;
+      }
+      button:hover {
+        background-color:#6c6c6c;
+      }
+      button:active {
+        background-color:#8c8c8c;
+      }
+      
+      .master{
+        margin:5px;
+        margin-bottom:0px;
+      }
+      
+      .roof{
+        background: #4C4C4C;
+        width:10;
+      }
+      
+      .front{
+      border-style:solid;
+      border-width:2px;
+      border-top:0px;
+        height: 35px;
+        margin-left:2px;
+        margin-right:2px;
+        box-shadow:0px 3px 5px black inset;        
+      }
+      
+      .path{
+        height: 24px;       
+      }
+      .innerPath{
+        border-style:solid;
+        border-width:2px;
+        border-top:0px;
+        border-bottom:0px;     
+        width:36px;
+        background: #d6841f;
+      }
+          
+    .tri-br {
+      margin-top:2px;
+      width: 0; 
+      height: 0; 
+      border-top: 10px solid transparent;
+      border-bottom: 0px solid transparent;       
+      border-right:10px solid #4C4C4C; 
+    }
+    .tri-bl {
+      margin-top:2px;
+      width: 0; 
+      height: 0; 
+      border-top: 10px solid transparent;
+      border-bottom: 00px solid transparent;       
+      border-left:10px solid #4C4C4C; 
+    }
+    .divr{
+      width:10px;
+      background: -webkit-linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* Standard syntax */
+    }    
+    .divl{
+      width:10px;
+      background: -webkit-linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* Standard syntax */
+    }    
+    
+    .doorway{
+      width:44px;
+      background: #b49fac;
+      z-index: -1;
+      border-style:solid;
+      border-width:2px;
+      border-top:0px;
+      border-bottom:0px;
+    }
+    .doorwayInner{
+      background:black;
+      position:relative;
+      width:32px;
+      height:28px;
+      top:7px;
+      left:6px;
+    }
+    
+    .window{
+      background:#b56b16;
+      width:20px;
+      height:20px;
+      border-style:solid;
+      border-width:2px;
+      border-top:0px;
+    }
+    .windowInner{
+      background:black;
+      position:relative;
+      width:16px;
+      height:16px;
+      top:2px;
+      left:2px;
+    }
+    
+    </style>    
+    
+    <div class="master">
+      <div horizontal layout>
+        <div vertical layout>
+          <div class="tri-br"></div>
+          <div flex class="roof"></div>
+        </div>
+        
+        
+        <button on-click="{{clicked}}" >
+        <div height="50px" class="headerDiv">{{name}}</div>
+        <div horizontal layout>
+          <img width="100px" height="100px" _src="{{icon}}"/>
+          <div self-center flex class="descriptionDiv">{{description}}</div>
+        </div>
+        </button>
+        
+        <div vertical layout>
+          <div class="tri-bl"></div>
+          <div flex class="roof"></div>
+        </div>
+        
+      </div>
+      
+      <div style="height: 15px;background: #4C4C4C;" horizontal layout>
+        <div class="divl"></div>
+        <div flex></div>
+        <div class="divr"></div>
+      </div>
+      
+      <div class="front" horizontal layout>
+        <div style="background: #9e601c;z-index: -1;" flex  horizontal center-justified layout start>
+          <div class="window">
+            <div class="windowInner"></div>
+          </div>
+        </div>
+        <div class="doorway">
+          <div class="doorwayInner"></div>
+        </div>
+        <div style="background: #9e601c;z-index: -1;" flex  horizontal center-justified layout start>
+          <div class="window">
+            <div class="windowInner"></div>
+          </div>
+          </div>
+      </div>
+      
+      <div class="path" horizontal layout>
+        <div style="background: transparent;" flex></div>
+        <div class="innerPath"></div>
+        <div style="background: transparent;" flex></div>
+      </div>
+    </div>
+        
+  </template>
+  <script type="application/dart" src="gamebutton.dart"></script>
+</polymer-element>
+

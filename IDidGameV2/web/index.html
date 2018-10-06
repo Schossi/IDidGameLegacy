@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDidGame</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="Images/IDGFavicon.png"/>
+
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    <link rel="import" href="elements/pathhorizontal.html">
+    <link rel="import" href="elements/gamebutton.html">
+    <link rel="import" href="elements/idgheader.html">
+    <link rel="import" href="elements/signbig.html">
+    
+    <style>
+      html *
+      {
+         font-family: Arial !important;
+      }
+      
+      body {
+        /*background-color:#60b820;*/
+        background-color:#1cab3e;
+        margin:0px;
+        padding:0px;
+      }
+      
+            
+      h1, p {
+        text-align: center;  
+      }
+      
+      .side{
+        background-image:url("/images/tree64.png");
+        height:64px;
+        margin-top:12px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <idg-header title="Welcome" subtitle="This is where i put everything i make as a hobbyist gamedev that i consider playable. Please try some games, i'd love to hear what you think." type=1></idg-header>
+  
+    <div around-justified vertical layout>
+      <sign-big title="Unity"></sign-big>
+      <div around-justified horizontal layout>
+        <game-button name="Mugslinger" path="Mugslinger" description="Hurl mugs at your foes. Post-Compo Version of my LD32 entry"></game-button>        
+      </div>
+      <path-horizontal></path-horizontal>
+      <sign-big title="Dart"></sign-big>
+      <div around-justified horizontal layout>
+        <game-button name="Areas" path="Areas" description="How I imagine Geometry Wars King Mode would work in 3d"></game-button>        
+        <game-button name="RiseOfTheTargets" path="Rise" description="Shoot the Targets before they hone in on you. [Chrome only]"></game-button>
+      </div>
+      <path-horizontal></path-horizontal>
+      <sign-big title="Javascript"></sign-big> 
+      <div around-justified horizontal layout>
+        <game-button name="WarpSpace" path="Respawn" description="Upgrade your ship and customize different weapon setups in this shooter."></game-button>
+        <game-button name="JuggleStruggle" path="Juggle" description="Muscle memory is king here, dont get distracted!"></game-button>
+        <game-button name="Incineratris" path="Fire" description="Burn those pesky S-blocks, smash em to pieces!"></game-button>
+      </div>
+      <path-horizontal></path-horizontal>      
+      <sign-big title="Javascript Practice"></sign-big> 
+      <div around-justified horizontal layout>
+        <game-button name="Pebble" description="Pebble the Chessboard as seen on Numberphile."></game-button>
+        <game-button name="Pong" description="2 Player Pong Clone"></game-button>
+        <game-button name="Breakout" description="A Breakout variant that alows you to control the speed of the ball."></game-button>
+        <game-button name="TowerDefense" description="Prototype of a Tower Defense game that lets you configure your towers."></game-button>
+      </div>
+      <path-horizontal></path-horizontal>      
+      <div class="side" ></div>
+    </div>
+    
+    
+    <!-- bootstrap polymer -->
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>IDG Tower Defense</title>
+    <link rel="icon"
+      type="image/png"
+      href="Images/IDGFavicon.png" />
+    <link href="../../style/gameV1.css" rel="stylesheet" />
+    
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    <link rel="import" href="../../elements/idgheader.html">
+    <link rel="import" href="../../elements/gamefooter.html">
+</head>
+<body  >    
+     <idg-header title="Tower Defense" subtitle=""></idg-header>
+     
+    <div id="div_debug" style="color:white;visibility:hidden">
+        <span id="x"></span>X
+        <span id="y"></span>Y
+        <span id="span_fps"></span>
+        <span id="span_status"></span>
+    </div>
+        <div id="div_gameObject">
+            <canvas class="canvas" id="canvas_background"  width="800" height="600">Nix Gut!</canvas>
+            <canvas class="canvas" id="canvas_main" width="800" height="600"></canvas>
+            <canvas class="canvas" id="canvas_foreground"  width="800" height="600"></canvas>
+            <canvas class="canvas" id="canvas_overlay"  width="800" height="600"></canvas>
+        </div>
+
+    <game-footer></game-footer>
+
+    <script type="text/javascript" src="Scripts/RSTools.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Prototypes.js"></script>
+    <script src="Scripts/JSObjects/Sound.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Towers.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Enemies.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/UI.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Structures.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Worlds.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Effects.js"></script>
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+    
+    <!-- bootstrap polymer -->
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+</body>
+</html>

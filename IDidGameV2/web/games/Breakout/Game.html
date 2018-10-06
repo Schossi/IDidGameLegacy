@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Breakout Clone</title>
+    <link rel="icon"
+          type="image/png"
+          href="Images/IDGFavicon.png" />
+    <link href="../../style/gameV1.css" rel="stylesheet" />
+    
+    
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    <link rel="import" href="../../elements/idgheader.html">
+    <link rel="import" href="../../elements/gamefooter.html">
+    
+</head>
+<body  >
+     <idg-header title="Breakout" subtitle="There are many Breakout clones, but this one is mine"></idg-header>
+ 
+    <div style="visibility: hidden" id="x"></div>
+    <div style="visibility: hidden" id="y"></div>
+    <div style="visibility: hidden" id="fps"></div>
+    <div style="visibility: hidden" id="ballCount"></div>
+ 
+    <div id="div_gameObject" >
+    <canvas id="canvas_background" class="canvas" width="800" height="600">Nix Gut!</canvas>
+    <canvas id="canvas_main" class="canvas" width="800" height="600"></canvas>
+    </div>
+    
+    <game-footer></game-footer>
+
+    <script type="text/javascript" src="Main.js"></script>
+    
+    <!-- bootstrap polymer -->
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+</body>
+</html>

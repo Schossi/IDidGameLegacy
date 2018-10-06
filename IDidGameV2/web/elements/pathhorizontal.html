@@ -1,0 +1,62 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<link rel="import" href="signsmall.html">    
+<polymer-element name="path-horizontal" atributes="tag">
+  <template>
+    <style>
+      
+      .master{
+      position:relative;
+      padding-top:2px;
+      padding-bottom:2px;
+      top:-2px;
+        background:#d6841f;
+        height:32px;
+      }
+      
+      .border{
+        shape-rendering:geometricPrecision;
+        position:relative;
+        top:-2px;
+        height:2px;
+        background:black;
+        z-index: -10;
+      }
+      .borderBottom{
+        shape-rendering:geometricPrecision;
+        position:relative;
+        top:-2px;
+        background:black;
+        height:2px;        
+      }
+      
+      .pcanvas{
+        position:relative;
+        top:-36px;
+      }
+      
+      .scoreSign{
+        position: absolute;
+        top:80px;
+      }
+      .conditionSign{
+        position:absolute;
+        top:80px;
+        right:0px;
+      }
+      </style>    
+        
+    <sign-small id="scoreSign" class="scoreSign" text="{{instanceScoreText}}"></sign-small>
+    <sign-small id="conditionSign" class="conditionSign" text="{{instanceCondition.text}}" hasIcon="{{instanceCondition.hasIcon}}" iconX="{{instanceCondition.iconX}}" iconY="{{instanceCondition.iconY}}"></sign-small>
+    
+      <div class="border"></div>
+    <div class="master" id="pathdiv">
+      <canvas height="68px" class="pcanvas" id="pathcanvas"></canvas>
+    </div>
+      <div class="borderBottom"></div>
+        
+  </template>
+  <script type="application/dart" src="pathhorizontal.dart"></script>
+</polymer-element>
+

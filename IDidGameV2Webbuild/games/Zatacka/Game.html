@@ -1,0 +1,86 @@
+<!DOCTYPE html><html><head>
+    <title>IDG Zatacka</title>
+    <link rel="icon" type="image/png" href="Images/IDGFavicon.png">
+    <style>html *{
+   font-family: Arial !important;
+   background-color: black;            
+}
+
+body {
+  margin:0px;
+  padding:0px;
+}
+
+canvas {
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin: auto;
+  cursor: crosshair;
+  z-index:1000;
+}
+</style>
+</head>
+<body>
+    
+    <div id="div_debug" style="color:white;margin-left:80px;">        
+        <span id="x"></span>X
+        <span id="y"></span>Y
+        <span id="span_fps"></span>FPS
+        <span id="span_status"></span>
+        <h1>AS for Player1</h1>
+        <h1>JK for Player2</h1>
+    </div>
+        <div id="div_gameObject">
+            <canvas class="canvas" id="canvas_main" width="600" height="600"></canvas>
+            <canvas class="canvas" id="canvas_overlay" width="600" height="600"></canvas>
+        </div>
+
+
+
+    <table class="notes">
+        <tbody><tr>
+            <td id="notesContent" class="notesContentCell">
+                <div class="notesContent">
+                    <br><br>
+                    
+                </div>
+            </td>
+            <td class="notesButton" onclick="IDIDGAMECOM.switchNote(event)">
+                D<br>
+                E<br>
+                V<br>
+                <br>
+                N<br>
+                O<br>
+                T<br>
+                E<br>
+                S<br>
+            </td>
+        </tr>
+    </tbody></table>
+
+
+    <div class="home">
+        <a href="../../index.html">
+            <img style="border:0" height="50" width="50" src="../../Images/IDGFaviconHome.png">
+        </a>
+    </div>
+
+    <script type="text/javascript">        
+        kongregate = undefined;
+    </script>
+    <script type="text/javascript" src="Scripts/RSTools.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Prototypes.js"></script>
+    <script src="Scripts/JSObjects/GameContext.js"></script>
+    <script src="Scripts/JSObjects/Sound.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/UI.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Effects.js"></script>
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+
+    <script src="../../Scripts/UI.js"></script>
+
+</body></html>

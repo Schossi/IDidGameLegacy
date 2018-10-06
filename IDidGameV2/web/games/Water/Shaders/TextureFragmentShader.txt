@@ -1,0 +1,21 @@
+﻿precision mediump float;
+
+varying vec2 vTexCoord;
+varying vec4 vSwapColor;
+
+uniform vec4 uSwapColor;
+uniform bool uSwap;
+uniform sampler2D uSampler;
+uniform vec4 uMultiply;
+uniform vec2 uFragOffset;
+
+void main() {
+	vec2 texPos=vTexCoord*vec2(1,1)+uFragOffset;
+	vec4 prem=texture2D(uSampler, texPos);
+	
+	if(uSwap && prem.r>0.99999 && prem.g>0.99999 && prem.b>0.99999 && prem.a>0.00001){
+		prem=vSwapColor;
+	}
+
+	gl_FragColor = prem * uMultiply;
+}

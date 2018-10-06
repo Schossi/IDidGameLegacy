@@ -1,0 +1,836 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDidGame</title>
+    <link rel="icon" type="image/png" href="Images/IDGFavicon.png">
+
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    
+    
+    
+    
+    
+    
+  <link rel="stylesheet" type="text/css" href="packages/polymer/src/build/log_injector.css"></head>
+  <body><div hidden=""><style shim-shadowdom="">
+/*******************************
+          Flex Layout
+*******************************/
+
+html /deep/ [layout][horizontal], html /deep/ [layout][vertical] {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+html /deep/ [layout][horizontal][inline], html /deep/ [layout][vertical][inline] {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+html /deep/ [layout][horizontal] {
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+html /deep/ [layout][horizontal][reverse] {
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+html /deep/ [layout][vertical] {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+html /deep/ [layout][vertical][reverse] {
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+html /deep/ [layout][wrap] {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+html /deep/ [layout][wrap-reverse] {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+html /deep/ [flex] {
+  -ms-flex: 1 1 0.000000001px;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-basis: 0.000000001px;
+  flex-basis: 0.000000001px;
+}
+
+html /deep/ [vertical][layout] > [flex][auto-vertical], html /deep/ [vertical][layout]::shadow [flex][auto-vertical] {
+  -ms-flex: 1 1 auto;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+}
+
+html /deep/ [flex][auto] {
+  -ms-flex: 1 1 auto;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+}
+
+html /deep/ [flex][none] {
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+}
+
+html /deep/ [flex][one] {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+html /deep/ [flex][two] {
+  -ms-flex: 2;
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+html /deep/ [flex][three] {
+  -ms-flex: 3;
+  -webkit-flex: 3;
+  flex: 3;
+}
+
+html /deep/ [flex][four] {
+  -ms-flex: 4;
+  -webkit-flex: 4;
+  flex: 4;
+}
+
+html /deep/ [flex][five] {
+  -ms-flex: 5;
+  -webkit-flex: 5;
+  flex: 5;
+}
+
+html /deep/ [flex][six] {
+  -ms-flex: 6;
+  -webkit-flex: 6;
+  flex: 6;
+}
+
+html /deep/ [flex][seven] {
+  -ms-flex: 7;
+  -webkit-flex: 7;
+  flex: 7;
+}
+
+html /deep/ [flex][eight] {
+  -ms-flex: 8;
+  -webkit-flex: 8;
+  flex: 8;
+}
+
+html /deep/ [flex][nine] {
+  -ms-flex: 9;
+  -webkit-flex: 9;
+  flex: 9;
+}
+
+html /deep/ [flex][ten] {
+  -ms-flex: 10;
+  -webkit-flex: 10;
+  flex: 10;
+}
+
+html /deep/ [flex][eleven] {
+  -ms-flex: 11;
+  -webkit-flex: 11;
+  flex: 11;
+}
+
+html /deep/ [flex][twelve] {
+  -ms-flex: 12;
+  -webkit-flex: 12;
+  flex: 12;
+}
+
+/* alignment in cross axis */
+
+html /deep/ [layout][start] {
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+html /deep/ [layout][center], html /deep/ [layout][center-center] {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+html /deep/ [layout][end] {
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/* alignment in main axis */
+
+html /deep/ [layout][start-justified] {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+html /deep/ [layout][center-justified], html /deep/ [layout][center-center] {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+html /deep/ [layout][end-justified] {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+html /deep/ [layout][around-justified] {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+html /deep/ [layout][justified] {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* self alignment */
+
+html /deep/ [self-start] {
+  -ms-align-self: flex-start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+
+html /deep/ [self-center] {
+  -ms-align-self: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+html /deep/ [self-end] {
+  -ms-align-self: flex-end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+html /deep/ [self-stretch] {
+  -ms-align-self: stretch;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+
+/*******************************
+          Other Layout
+*******************************/
+
+html /deep/ [block] {
+  display: block;
+}
+
+/* ie support for hidden */
+html /deep/ [hidden] {
+  display: none !important;
+}
+
+html /deep/ [relative] {
+  position: relative;
+}
+
+html /deep/ [fit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body[fullbleed] {
+  margin: 0;
+  height: 100vh;
+}
+
+/*******************************
+            Other
+*******************************/
+
+html /deep/ [segment], html /deep/ segment {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1em 0.5em;
+  padding: 1em;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px 5px 5px 5px;
+}
+
+</style>
+
+<script src="packages/polymer/src/js/polymer/polymer.js"></script>
+
+<script>
+// TODO(sigmund): remove this script tag (dartbug.com/19650). This empty
+// script tag is necessary to work around a bug in Chrome 36.
+</script>
+
+<!-- unminified for debugging:
+<link rel="import" href="src/js/polymer/layout.html">
+<script src="src/js/polymer/polymer.concat.js"></script>
+-->
+
+
+
+
+<polymer-element name="sign-small" attributes="text">
+  <template>
+    <style>
+      .post{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        width:4px;
+        height:10px;
+        background: #713118;
+      }  
+      
+      
+      .inner{
+        margin:0px;
+        padding:4px;
+        background: #ffffa2;        
+        text-align: center;        
+      }
+      
+      .verticalLeft{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:4px;
+        min-height:26px;
+        background: #713118;
+        margin-left:4px;
+      }
+      .verticalRight{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:4px;
+        background: #713118;
+        margin-right:4px;
+      }
+       
+      .horizontal{
+        border-style:solid;
+        border-width:2px;
+        border-color:black;
+        height:4px;        
+        background: #b56b16; 
+      }
+      
+      .middle{
+        min-height: 26px;
+      }
+      
+      .iconDiv{
+      visibility:hidden; 
+        background-image:url(images/Sprites.png);
+        background-position:0px 0px;
+        height: 0px;
+        width:0px;
+      }
+      
+      .signMaster{
+        margin:10px;        
+      }    
+      
+    </style>    
+    
+    <div horizontal="" layout="">
+    <div class="signMaster" vertical="" layout="">
+      <div class="horizontal"></div>
+      <div class="middle" horizontal="" layout="">
+        <div class="verticalLeft"></div>
+        <div class="inner">{{text}}</div>
+        <div style="background: #ffffa2;" vertical="" layout="" center="">
+        <div class="iconDiv" id="iconDiv"></div>
+        </div>
+        <div class="verticalRight"></div>
+      </div>
+      <div class="horizontal"></div>
+      <div horizontal="" layout="">
+        <div flex=""></div>
+        <div class="post"></div>
+        <div flex=""></div>
+      </div>    
+    </div>
+    </div>
+        
+  </template>
+  
+</polymer-element>
+
+    
+<polymer-element name="path-horizontal" atributes="tag">
+  <template>
+    <style>
+      
+      .master{
+      position:relative;
+      padding-top:2px;
+      padding-bottom:2px;
+      top:-2px;
+        background:#d6841f;
+        height:32px;
+      }
+      
+      .border{
+        shape-rendering:geometricPrecision;
+        position:relative;
+        top:-2px;
+        height:2px;
+        background:black;
+        z-index: -10;
+      }
+      .borderBottom{
+        shape-rendering:geometricPrecision;
+        position:relative;
+        top:-2px;
+        background:black;
+        height:2px;        
+      }
+      
+      .pcanvas{
+        position:relative;
+        top:-36px;
+      }
+      
+      .scoreSign{
+        position: absolute;
+        top:80px;
+      }
+      .conditionSign{
+        position:absolute;
+        top:80px;
+        right:0px;
+      }
+      </style>    
+        
+    <sign-small id="scoreSign" class="scoreSign" text="{{instanceScoreText}}"></sign-small>
+    <sign-small id="conditionSign" class="conditionSign" text="{{instanceCondition.text}}" hasicon="{{instanceCondition.hasIcon}}" iconx="{{instanceCondition.iconX}}" icony="{{instanceCondition.iconY}}"></sign-small>
+    
+      <div class="border"></div>
+    <div class="master" id="pathdiv">
+      <canvas height="68px" class="pcanvas" id="pathcanvas"></canvas>
+    </div>
+      <div class="borderBottom"></div>
+        
+  </template>
+  
+</polymer-element>
+
+
+
+<polymer-element around-justified="" name="game-button" attributes="name icon description">
+  <template>
+    <style>   
+      
+      .headerDiv{
+        text-align: center;
+        font-size: 16pt;      
+      }
+      .descriptionDiv{
+        text-align: left;
+        font-size: 12pt;      
+      }
+      button {     
+        box-shadow:3px 3px 5px black inset;   
+        border:#FFFFFF;
+        border-radius:5px;
+        border-style:solid;
+        display:inline-block;
+        height:150px;
+        width:230px;
+        background-color:#565656;
+      }
+      button:hover {
+        background-color:#6c6c6c;
+      }
+      button:active {
+        background-color:#8c8c8c;
+      }
+      
+      .master{
+        margin:5px;
+        margin-bottom:0px;
+      }
+      
+      .roof{
+        background: #4C4C4C;
+        width:10;
+      }
+      
+      .front{
+      border-style:solid;
+      border-width:2px;
+      border-top:0px;
+        height: 35px;
+        margin-left:2px;
+        margin-right:2px;
+        box-shadow:0px 3px 5px black inset;        
+      }
+      
+      .path{
+        height: 24px;       
+      }
+      .innerPath{
+        border-style:solid;
+        border-width:2px;
+        border-top:0px;
+        border-bottom:0px;     
+        width:36px;
+        background: #d6841f;
+      }
+          
+    .tri-br {
+      margin-top:2px;
+      width: 0; 
+      height: 0; 
+      border-top: 10px solid transparent;
+      border-bottom: 0px solid transparent;       
+      border-right:10px solid #4C4C4C; 
+    }
+    .tri-bl {
+      margin-top:2px;
+      width: 0; 
+      height: 0; 
+      border-top: 10px solid transparent;
+      border-bottom: 00px solid transparent;       
+      border-left:10px solid #4C4C4C; 
+    }
+    .divr{
+      width:10px;
+      background: -webkit-linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* Standard syntax */
+    }    
+    .divl{
+      width:10px;
+      background: -webkit-linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(-55deg, rgba(30,87,153,0) 0%, rgba(233,238,245,0) 40%, rgba(255,255,255,1) 50%, rgba(242,248,253,0) 60%, rgba(125,185,232,0) 100%); /* Standard syntax */
+    }    
+    
+    .doorway{
+      width:44px;
+      background: #b49fac;
+      z-index: -1;
+      border-style:solid;
+      border-width:2px;
+      border-top:0px;
+      border-bottom:0px;
+    }
+    .doorwayInner{
+      background:black;
+      position:relative;
+      width:32px;
+      height:28px;
+      top:7px;
+      left:6px;
+    }
+    
+    .window{
+      background:#b56b16;
+      width:20px;
+      height:20px;
+      border-style:solid;
+      border-width:2px;
+      border-top:0px;
+    }
+    .windowInner{
+      background:black;
+      position:relative;
+      width:16px;
+      height:16px;
+      top:2px;
+      left:2px;
+    }
+    
+    </style>    
+    
+    <div class="master">
+      <div horizontal="" layout="">
+        <div vertical="" layout="">
+          <div class="tri-br"></div>
+          <div flex="" class="roof"></div>
+        </div>
+        
+        
+        <button on-click="{{clicked}}">
+        <div height="50px" class="headerDiv">{{name}}</div>
+        <div horizontal="" layout="">
+          <img width="100px" height="100px" _src="{{icon}}">
+          <div self-center="" flex="" class="descriptionDiv">{{description}}</div>
+        </div>
+        </button>
+        
+        <div vertical="" layout="">
+          <div class="tri-bl"></div>
+          <div flex="" class="roof"></div>
+        </div>
+        
+      </div>
+      
+      <div style="height: 15px;background: #4C4C4C;" horizontal="" layout="">
+        <div class="divl"></div>
+        <div flex=""></div>
+        <div class="divr"></div>
+      </div>
+      
+      <div class="front" horizontal="" layout="">
+        <div style="background: #9e601c;z-index: -1;" flex="" horizontal="" center-justified="" layout="" start="">
+          <div class="window">
+            <div class="windowInner"></div>
+          </div>
+        </div>
+        <div class="doorway">
+          <div class="doorwayInner"></div>
+        </div>
+        <div style="background: #9e601c;z-index: -1;" flex="" horizontal="" center-justified="" layout="" start="">
+          <div class="window">
+            <div class="windowInner"></div>
+          </div>
+          </div>
+      </div>
+      
+      <div class="path" horizontal="" layout="">
+        <div style="background: transparent;" flex=""></div>
+        <div class="innerPath"></div>
+        <div style="background: transparent;" flex=""></div>
+      </div>
+    </div>
+        
+  </template>
+  
+</polymer-element>
+
+
+
+<polymer-element name="idg-header" attributes="title subtitle type">
+  <template>
+    <style>
+    header{
+    border-bottom: 3px solid #444444; 
+    background-color: #000000;
+    }
+    
+    .title{
+    color:#FFFFFF;
+    font-size:18pt;
+      text-align: center;
+    }    
+    .subtitle{
+    color:#FFFFFF;
+    font-size:10pt;
+      text-align: center;
+    }    
+    </style>    
+    
+    <header horizontal="" layout="">
+    <img width="50px" height="50px" id="icon" src="/images/IDGFaviconBig.png">      
+    <a id="home" href="../index.html">
+        <img width="50px" height="50px" src="/images/IDGFaviconHome.png">
+    </a>
+      
+    <div flex="" vertical="" layout="">
+      <div class="title">{{title}}</div>   
+      <div class="subtitle">{{subtitle}}</div>   
+    </div>
+     <div>     
+      <iframe src="//platform.twitter.com/widgets/follow_button.html?screen_name=IDidGame" style="width: 128px; height: 20px;" allowtransparency="true" frameborder="0" scrolling="no">
+      </iframe>
+    </div>
+    <hr>
+    </header> 
+           
+  </template>
+  
+</polymer-element>
+
+<polymer-element name="sign-big" attributes="title">
+  <template>
+    <style>
+      .postLeft{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        width:6px;
+        height:24px;
+        background: #713118;
+        margin-left:4px;
+      }     
+      .postRight{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        width:6px;
+        height:24px;
+        background: #713118;
+        margin-right:4px;
+      }     
+      
+      .master{
+        margin:10px;
+        
+      }      
+      
+      .inner{
+        margin:0px;
+        padding:4px;
+        background: #ffffa2;        
+        text-align: center;        
+      }
+      
+      .verticalLeft{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:6px;
+        background: #713118;
+        margin-left:4px;
+      }
+      .verticalRight{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:6px;
+        background: #713118;
+        margin-right:4px;
+      }
+       
+      .horizontal{
+        border-style:solid;
+        border-width:2px;
+        border-color:black;
+        height:8px;        
+        background: #b56b16; 
+      }
+      
+      .side{
+        background-image:url(images/tree64.png);
+        height:64px;
+        margin-top:12px;
+      }
+    </style>    
+    
+    <div horizontal="" layout="">
+      <div class="side" style="background-position:right;" flex=""></div>
+      <div class="master" vertical="" layout="">
+        <div class="horizontal"></div>
+        <div horizontal="" layout="">
+          <div class="verticalLeft"></div>
+          <h2 class="inner">{{title}}</h2>
+          <div class="verticalRight"></div> 
+        </div>
+        <div class="horizontal"></div>
+        <div horizontal="" layout="">
+          <div class="postLeft"></div>
+          <div flex=""></div>
+          <div class="postRight"></div>
+        </div>    
+      </div>
+      <div class="side" style="background-position:left;" flex=""></div>
+    </div>
+        
+  </template>
+  
+</polymer-element>
+
+<style>
+      html *
+      {
+         font-family: Arial !important;
+      }
+      
+      body {
+        /*background-color:#60b820;*/
+        background-color:#1cab3e;
+        margin:0px;
+        padding:0px;
+      }
+      
+            
+      h1, p {
+        text-align: center;  
+      }
+      
+      .side{
+        background-image:url(/images/tree64.png);
+        height:64px;
+        margin-top:12px;
+      }
+    </style></div>
+    
+    <idg-header title="Welcome" subtitle="This is where i put everything i make as a hobbyist gamedev that i consider playable. Please try some games, i'd love to hear what you think." type="1"></idg-header>
+  
+    <div around-justified="" vertical="" layout="">
+      <sign-big title="Javascript Practice"></sign-big>
+      <div around-justified="" horizontal="" layout="">
+        <game-button name="Pebble" description="Pebble the Chessboard as seen on Numberphile."></game-button>
+        <game-button name="Pong" description="2 Player Pong Clone"></game-button>
+        <game-button name="Breakout" description="A Breakout variant that alows you to control the speed of the ball."></game-button>
+        <game-button name="TowerDefense" description="Prototype of a Tower Defense game that lets you configure your towers."></game-button>
+      </div>
+      <path-horizontal></path-horizontal>
+      <sign-big title="One Game a Month"></sign-big> 
+      <div around-justified="" horizontal="" layout="">
+        <game-button name="WarpSpace" path="Respawn" description="Upgrade your ship and customize different weapon setups in this shooter."></game-button>
+        <game-button name="JuggleStruggle" path="Juggle" description="Muscle memory is king here, dont get distracted!"></game-button>
+        <game-button name="Incineratris" path="Fire" description="Burn those pesky S-blocks, smash em to pieces!"></game-button>
+        <game-button name="RiseOfTheTargets" path="Rise" description="Shoot the Targets before they hone in on you. [Chrome only]"></game-button>
+      </div>
+      <path-horizontal></path-horizontal>      
+      <div class="side"></div>
+    </div>
+    
+    
+    <!-- bootstrap polymer -->
+    
+    
+  
+
+<script type="application/dart" src="indexV2.html_bootstrap.dart"></script><script src="packages/browser/dart.js"></script></body></html>

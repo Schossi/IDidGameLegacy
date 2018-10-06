@@ -1,0 +1,93 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<polymer-element name="sign-small" attributes="text">
+  <template>
+    <style>
+      .post{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        width:4px;
+        height:10px;
+        background: #713118;
+      }  
+      
+      
+      .inner{
+        margin:0px;
+        padding:4px;
+        background: #ffffa2;        
+        text-align: center;        
+      }
+      
+      .verticalLeft{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:4px;
+        min-height:26px;
+        background: #713118;
+        margin-left:4px;
+      }
+      .verticalRight{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:4px;
+        background: #713118;
+        margin-right:4px;
+      }
+       
+      .horizontal{
+        border-style:solid;
+        border-width:2px;
+        border-color:black;
+        height:4px;        
+        background: #b56b16; 
+      }
+      
+      .middle{
+        min-height: 26px;
+      }
+      
+      .iconDiv{
+      visibility:hidden; 
+        background-image:url("../images/Sprites.png");
+        background-position:0px 0px;
+        height: 0px;
+        width:0px;
+      }
+      
+      .signMaster{
+        margin:10px;        
+      }    
+      
+    </style>    
+    
+    <div horizontal layout>
+    <div class="signMaster" vertical layout>
+      <div class="horizontal"></div>
+      <div class="middle" horizontal layout>
+        <div class="verticalLeft"></div>
+        <div class="inner" >{{text}}</div>
+        <div style="background: #ffffa2;" vertical layout center>
+        <div class="iconDiv" id="iconDiv"></div>
+        </div>
+        <div class="verticalRight"></div>
+      </div>
+      <div class="horizontal"></div>
+      <div horizontal layout>
+        <div flex></div>
+        <div class="post"></div>
+        <div flex></div>
+      </div>    
+    </div>
+    </div>
+        
+  </template>
+  <script type="application/dart" src="signsmall.dart"></script>
+</polymer-element>
+

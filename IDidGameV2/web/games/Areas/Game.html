@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IDG Rise of the Targets</title>
+<link rel="icon"
+          type="image/png"
+          href="Images/IDGFavicon.png" />
+    <link href="../../style/gameV1.css" rel="stylesheet" />
+        
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    <link rel="import" href="../../elements/idgheader.html">
+    <link rel="import" href="../../elements/gamefooter.html">
+</head>
+<body>
+     <idg-header title="Areas" subtitle=""></idg-header>
+
+    <div id="gameContainer"  >
+    </div>
+    
+    <game-footer></game-footer>
+
+    <script async src="packages/browser/dart.js"></script>
+    <script src="Scripts/Controls_Firefox.js"></script>
+    <script type="text/javascript" src="Scripts/areas.js"></script>
+    
+    <!-- bootstrap polymer -->
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+</body>
+</html>

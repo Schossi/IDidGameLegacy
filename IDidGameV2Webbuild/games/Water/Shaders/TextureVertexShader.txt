@@ -1,0 +1,23 @@
+﻿precision mediump float;
+
+attribute vec2 aVertexPosition;
+attribute vec2 aTexPosition;
+attribute vec4 aSwapColor;
+
+uniform sampler2D uSampler;
+uniform vec2 uScale;
+uniform vec2 uTransform;
+
+varying vec2 vTexCoord;
+varying vec4 vSwapColor;
+
+void main() {
+	vTexCoord = aVertexPosition;
+	vSwapColor = aSwapColor;
+
+	vec2 flip=vec2(1,-1);
+
+	vec2 temp= (aVertexPosition+aTexPosition)*uScale+uTransform;
+
+	gl_Position = vec4(temp*flip, 0, 1);
+}

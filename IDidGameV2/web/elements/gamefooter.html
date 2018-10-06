@@ -1,0 +1,57 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<polymer-element name="game-footer" attributes="tag">
+  <template>
+    <style>
+
+    .doorway{
+      opacity:0.2;
+      width:88px;
+      margin-top:10px;
+      background: white;
+      z-index: 1;
+      box-shadow: 0px 0px 20px #fff;
+    }
+    .doorway:hover{
+      opacity:0.8;
+    }
+    
+    .footerElement{
+      z-index;-2;
+    }
+    
+    .window{
+      opacity:0.1;
+      background:white;
+      z-index: -1;
+      width:40px;
+      height:20px;
+      box-shadow: 0px 0px 20px #fff;
+    }
+    
+    footer {
+      width:100%;
+      height:40px;
+      position:absolute;
+      bottom:0;
+      left:0;
+    }
+    </style>    
+    
+    <footer class="footerElement" horizontal layout>
+      <div flex  horizontal center-justified layout start>
+        <div class="window">
+        </div>
+      </div>
+      <a href="../../index.html" class="doorway">
+      </a>
+      <div flex  horizontal center-justified layout start>
+        <div class="window">
+        </div>
+      </div>
+    </footer> 
+           
+  </template>
+  <script type="application/dart" src="gamefooter.dart"></script>
+</polymer-element>

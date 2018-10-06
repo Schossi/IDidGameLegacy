@@ -1,0 +1,94 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<polymer-element name="sign-big" attributes="title">
+  <template>
+    <style>
+      .postLeft{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        width:6px;
+        height:24px;
+        background: #713118;
+        margin-left:4px;
+      }     
+      .postRight{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        width:6px;
+        height:24px;
+        background: #713118;
+        margin-right:4px;
+      }     
+      
+      .master{
+        margin:10px;
+        
+      }      
+      
+      .inner{
+        margin:0px;
+        padding:4px;
+        background: #ffffa2;        
+        text-align: center;        
+      }
+      
+      .verticalLeft{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:6px;
+        background: #713118;
+        margin-left:4px;
+      }
+      .verticalRight{
+        border-style:solid;
+        border-width:2px;
+        border-top-width:0px;
+        border-bottom-width:0px;
+        width:6px;
+        background: #713118;
+        margin-right:4px;
+      }
+       
+      .horizontal{
+        border-style:solid;
+        border-width:2px;
+        border-color:black;
+        height:8px;        
+        background: #b56b16; 
+      }
+      
+      .side{
+        background-image:url("../images/tree64.png");
+        height:64px;
+        margin-top:12px;
+      }
+    </style>    
+    
+    <div horizontal layout>
+      <div class="side" style="background-position:right;" flex></div>
+      <div class="master" vertical layout>
+        <div class="horizontal"></div>
+        <div horizontal layout>
+          <div class="verticalLeft"></div>
+          <h2 class="inner" >{{title}}</h2>
+          <div class="verticalRight"></div> 
+        </div>
+        <div class="horizontal"></div>
+        <div horizontal layout>
+          <div class="postLeft"></div>
+          <div flex></div>
+          <div class="postRight"></div>
+        </div>    
+      </div>
+      <div class="side" style="background-position:left;" flex></div>
+    </div>
+        
+  </template>
+  <script type="application/dart" src="signbig.dart"></script>
+</polymer-element>
+

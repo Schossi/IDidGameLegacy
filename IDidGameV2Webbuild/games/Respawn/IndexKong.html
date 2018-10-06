@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head>
+    <title>IDG Warp Space</title>
+
+    <!-- Load the Kongregate Javascript API -->
+    <script type="text/javascript" src="http://www.kongregate.com/javascripts/kongregate_api.js"></script>
+
+    <!-- Give the shell no border/scroll bars and match the Kongregate background color.
+         If your game needs scrollbars, you might need to modify these styles -->
+    <style type="text/css">
+        html {
+            border: none;
+            overflow: hidden;
+            background-color: #333;
+            height: 100%;
+        }
+
+        body {
+            border: none;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <script type="text/javascript">
+        // Called when the API is finished loading
+        function onLoadCompleted() {
+            // Get a global reference to the kongregate API. This way, pages included in the
+            // iframe can access it by using "parent.kongregate"
+            kongregate = kongregateAPI.getAPI();
+
+            // Embed the game into the "contentdiv" div, which is defined below. You can also
+            // manually create your own iframe, this function is just for convenience.
+            // This example also passes along the kongregate user_id and game_auth_token so
+            // that the page can use them for authentication.
+            var params = "kongregate_user_id=" + kongregate.services.getUserId() +
+                       "&kongregate_game_auth_token=" + kongregate.services.getGameAuthToken() +
+                       "&random=" + (Math.random() * 1000000000);
+            kongregateAPI.embedFrame("IndexKong.html" + params);
+        }
+
+        //IDG Let me know if kongregate is being loaded
+        kongregate = false;
+        //IDG
+
+        // Begin the process of loading the Kongregate API:
+        kongregateAPI.loadAPI(onLoadCompleted);
+    </script>
+
+
+    <div id="div_gameObject">
+        <canvas style="position: absolute; top: 0px; left: 0px; background-color: transparent" id="canvas_main" width="800" height="600"></canvas>
+        <canvas style="position: absolute; top: 0px; left: 0px; background-color: transparent; cursor: crosshair;" id="canvas_overlay" width="800" height="600"></canvas>
+    </div>
+
+    <script type="text/javascript" src="Scripts/RSTools.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Prototypes.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/GameContext.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Sound.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Ship.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Enemies.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/UI.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Effects.js"></script>
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+    
+
+</body></html>

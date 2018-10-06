@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>IDG Incineratris</title>
+    <link rel="icon"
+      type="image/png"
+      href="Images/IDGFavicon.png" />
+    <link href="../../style/gameV1.css" rel="stylesheet" />
+    
+    <!-- include the web_components polyfills with support for Dart. -->
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
+    <!-- import elements -->
+    <link rel="import" href="../../elements/idgheader.html">
+    <link rel="import" href="../../elements/gamefooter.html">
+</head>
+<body   > 
+     <idg-header title="Incineratris" subtitle=""></idg-header>
+     
+    
+    <div id="div_debug" style="visibility:hidden;color:white;margin-left:80px;">        
+        <span id="x"></span>X
+        <span id="y"></span>Y
+        <span id="span_fps"></span>FPS
+        <span id="span_status"></span>
+    </div>
+        <div  id="div_gameObject">
+            <canvas style="border:solid;border-color:white" class="canvas" id="canvas_main" width="800" height="600"></canvas>
+            <!--canvas style="border:solid;border-color:white" class="canvas" id="canvas_overlay" width="800" height="600"></!--canvas-->
+        </div>
+        
+        <game-footer></game-footer>
+
+    <script type="text/javascript">        
+        kongregate = undefined;
+    </script>
+    <script type="text/javascript" src="Scripts/Box2dWeb-2.1.a.3.js"></script>
+    <script type="text/javascript" src="Scripts/RSTools.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Prototypes.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/GameContext.js"></script>
+    <script src="Scripts/JSObjects/FireUtils.js"></script>
+    <script src="Scripts/JSObjects/Fire.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Sound.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/UI.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Effects.js"></script>
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+    
+    <!-- bootstrap polymer -->
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+</body>
+</html>

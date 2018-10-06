@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head>
+    <title>IDG CityBuilder</title>
+    <link rel="icon" type="image/png" href="Images/IDGFavicon.png">
+    <style>html *{
+   font-family: Arial !important;
+   background-color: black;            
+}
+
+body {
+  margin:0px;
+  padding:0px;
+}
+
+canvas {
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin: auto;
+  cursor: crosshair;
+  z-index:1000;
+}
+</style>
+</head>
+<body>
+    
+    <div id="div_debug" style="color:white;margin-left:80px;">        
+        <span id="x"></span>X
+        <br>
+        <span id="y"></span>Y
+        <br>
+        <span id="span_fps"></span>FPS
+        <br>
+        <span id="span_status"></span>
+    </div>
+        <div id="div_gameObject">
+            <canvas style="border:solid;border-color:white;background-color:black" class="canvas" id="canvas_main" width="800" height="600"></canvas>
+            <canvas class="canvas" id="canvas_overlay" width="800" height="600"></canvas>
+        </div>
+
+    <table class="notes">
+        <tbody><tr>
+            <td id="notesContent" class="notesContentCell">
+                <div class="notesContent">
+                    <br>Next Up:
+                    <br>Food
+                    <br>Housing
+                    <br>...                      
+                </div>
+            </td>
+            <td class="notesButton" onclick="IDIDGAMECOM.switchNote(event)">
+                D<br>
+                E<br>
+                V<br>
+                <br>
+                N<br>
+                O<br>
+                T<br>
+                E<br>
+                S<br>
+            </td>
+        </tr>
+    </tbody></table>
+
+
+    <div class="home">
+        <a href="../../index.html">
+            <img style="border:0" height="50" width="50" src="../../Images/IDGFaviconHome.png">
+        </a>
+    </div>
+
+    <!--script src="../../Scripts/Twitter.js"></!--script-->
+
+    <div class="gtwitter">
+        <!--a href="https://twitter.com/intent/tweet?screen_name=IDidGame" class="twitter-mention-button"  data-related="IDidGame">@IDidGame</!--a-->
+    </div>
+
+    <script type="text/javascript">        
+        kongregate = undefined;
+    </script>
+    <script src="Scripts/RSWebGL.js"></script>
+    <script type="text/javascript" src="Scripts/Box2dWeb-2.1.a.3.js"></script>
+    <script type="text/javascript" src="Scripts/RSTools.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Prototypes.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/GameContext.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Sound.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/UI.js"></script>
+    <script type="text/javascript" src="Scripts/JSObjects/Effects.js"></script>
+    <script src="Scripts/JSObjects/Map.js"></script>
+    <script src="Scripts/JSObjects/Building.js"></script>
+    <script src="Scripts/JSObjects/Agent.js"></script>
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+    <script src="../../Scripts/UI.js"></script>
+
+</body></html>
